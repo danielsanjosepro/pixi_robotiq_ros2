@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{serial}=="DAANTSB4", SYMLINK+="robotiq_gripper", MODE="0666", ATTR{device/latency_timer}="1"

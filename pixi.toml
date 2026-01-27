@@ -1,0 +1,61 @@
+[workspace]
+authors = ["Daniel San Jose Pro <42489409+danielsanjosepro@users.noreply.github.com>"]
+name = "robotiq_2f85_pixi"
+version = "0.1.0"
+channels = ["https://fast.prefix.dev/conda-forge"]
+platforms = ["linux-64"]
+
+[activation]
+scripts = ["scripts/set_ros_env.sh", "install/setup.bash"]
+
+[dependencies]
+python = "*"
+compilers = "*"
+cmake = "*"
+pkg-config = "*"
+make = "*"
+ninja = "*"
+mujoco = "*"
+
+[target.linux.dependencies]
+libgl-devel = "*"
+
+[environments]
+jazzy = { features = ["jazzy", "dev", "extra"] }
+
+# jazzy
+[feature.jazzy]
+channels = ["https://prefix.dev/robostack-jazzy", "https://fast.prefix.dev/conda-forge"]
+channel-priority = "strict"
+
+[feature.jazzy.dependencies]
+colcon-common-extensions = "*"
+ros-jazzy-desktop = "*"
+rosdep = "*"
+ros-jazzy-ros2-control = "*"
+ros-jazzy-ros2-controllers = "*"
+ros-jazzy-xacro = ">=2.0.13,<3"
+
+[feature.jazzy.tasks]
+clone = "git clone https://github.com/danielsanjosepro/ros2_robotiq_gripper.git src/ros2_robotiq_gripper"
+build = "colcon build --symlink-install --cmake-args -Wno-dev"
+apply-udev-rules = "bash scripts/apply_udev_rules.sh"
+gripper = "bash install/setup.bash && ros2 launch scripts/launch_robotiq.launch.py com_port:=/dev/robotiq_gripper"
+
+sine-test = "python scripts/test_sine.py"
+slider-gripper-control = "python scripts/slider_gripper_control.py"
+
+[feature.dev.pypi-dependencies]
+ruff= "*"
+bumpver = "*"
+build = "*"
+twine = "*"
+pre-commit = "*"
+pytest = "*"
+
+[feature.extra.pypi-dependencies]
+rich = "*"
+matplotlib = "*"
+
+[pypi-dependencies]
+crisp-python = ">=3.1.0, <4"
