@@ -38,6 +38,8 @@ Launch arguments:
 - `com_port` - Serial port (default: `/dev/robotiq_gripper`)
 - `launch_rviz` - Launch RViz visualization (default: `false`)
 
+### Test
+
 **Sine Wave Test** - Moves the gripper in a continuous sine wave pattern:
 
 ```bash
@@ -50,7 +52,6 @@ pixi run sine-test
 pixi shell
 python scripts/slider_gripper_control.py
 ```
-
 
 ## License
 

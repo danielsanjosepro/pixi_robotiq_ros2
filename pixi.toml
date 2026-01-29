@@ -40,10 +40,16 @@ ros-jazzy-xacro = ">=2.0.13,<3"
 clone = "git clone https://github.com/danielsanjosepro/ros2_robotiq_gripper.git src/ros2_robotiq_gripper"
 build = "colcon build --symlink-install --cmake-args -Wno-dev"
 apply-udev-rules = "bash scripts/apply_udev_rules.sh"
-gripper = "bash install/setup.bash && ros2 launch scripts/launch_robotiq.launch.py com_port:=/dev/robotiq_gripper"
 
 sine-test = "python scripts/test_sine.py"
 slider-gripper-control = "python scripts/slider_gripper_control.py"
+
+[feature.jazzy.tasks.gripper]
+args = [
+  { "arg" = "namespace", "default" = "robotiq_2f85" },
+  { "arg" = "port", "default" = "/dev/robotiq_gripper" },
+]
+cmd = "bash install/setup.bash && ros2 launch scripts/launch_robotiq.launch.py com_port:={{ port }} namespace:={{ namespace }}"
 
 [feature.dev.pypi-dependencies]
 ruff= "*"
