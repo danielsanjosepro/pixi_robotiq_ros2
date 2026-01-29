@@ -1,12 +1,15 @@
 
-<img src="media/robotiq_visual.png" alt="Logo" width="80" align="right">
-
 # Robotiq 2F-85 Pixi
+
+<img src="media/robotiq_visual.png" alt="Logo" width="160" align="right" z-index="10">
 
 A [Pixi](https://pixi.sh)-based workspace for controlling the Robotiq 2F-85 gripper using ROS2 Jazzy and ros2_control.
 
+> [!WARNING]
+> It uses a fork https://github.com/danielsanjosepro/ros2_robotiq_gripper of the original repository https://github.com/PickNikRobotics/ros2_robotiq_gripper as it was required for a minimal change.
+> You might want to consider using the orignal repository for future ROS2 versions.
 
-## Usage
+### Usage 
 
 Set the udev rules for the gripper:
 ```bash
@@ -34,8 +37,6 @@ Launch arguments:
 
 - `com_port` - Serial port (default: `/dev/robotiq_gripper`)
 - `launch_rviz` - Launch RViz visualization (default: `false`)
-
-### Test Scripts
 
 **Sine Wave Test** - Moves the gripper in a continuous sine wave pattern:
 
