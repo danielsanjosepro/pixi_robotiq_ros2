@@ -1,3 +1,6 @@
+
+<img src="media/robotiq_visual.png" alt="Logo" width="80" align="right">
+
 # Robotiq 2F-85 Pixi
 
 A [Pixi](https://pixi.sh)-based workspace for controlling the Robotiq 2F-85 gripper using ROS2 Jazzy and ros2_control.
