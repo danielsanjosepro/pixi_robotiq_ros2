@@ -25,7 +25,7 @@ pixi run set-udev-rules
 
 
 ```bash
-# Clone the ROS2 gripper driver
+# Fetch the submodules (ros2_robotiq_gripper, serial), not needed if cloned with --recursive
 pixi run clone
 # Build the workspace
 pixi run build
