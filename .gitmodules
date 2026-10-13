@@ -1,0 +1,8 @@
+[submodule "src/ros2_robotiq_gripper"]
+	path = src/ros2_robotiq_gripper
+	url = https://github.com/danielsanjosepro/ros2_robotiq_gripper.git
+	branch = main
+[submodule "src/serial"]
+	path = src/serial
+	url = https://github.com/tylerjw/serial.git
+	branch = ros2

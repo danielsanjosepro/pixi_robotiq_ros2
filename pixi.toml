@@ -37,7 +37,7 @@ ros-jazzy-ros2-controllers = "*"
 ros-jazzy-xacro = ">=2.0.13,<3"
 
 [feature.jazzy.tasks]
-clone = "git clone https://github.com/danielsanjosepro/ros2_robotiq_gripper.git src/ros2_robotiq_gripper"
+clone = "git submodule update --init --recursive"
 build = "colcon build --symlink-install --cmake-args -Wno-dev"
 apply-udev-rules = "bash scripts/apply_udev_rules.sh"
 
